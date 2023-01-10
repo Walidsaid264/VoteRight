@@ -1,0 +1,34 @@
+.navlinks{
+    margin: 20px;
+}
+.navlinks:hover{
+    background-color: rgb(24, 96, 76);
+
+
+}
+.navoverlay{
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    margin-left: 1180px;
+}
+.midlinks{
+    height: 400px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    line-height: 50px;
+    padding-top: 290px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    font-size: large;
+    
+
+}
+.results{
+    background-image: url("images\results.jpg");
+}
+.vertical{
+    background-color: #5358C6;
+    line-height: 20px;
+
+}

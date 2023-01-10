@@ -1,0 +1,38 @@
+.navlinks{
+    padding-left: 30px;
+}
+.navlinks:hover{
+    background-color: azure;
+    border-radius: 10px;
+
+
+}
+.coloverlay{
+    position: absolute;
+    margin: 120px 20px 50px 80px;
+    text-align: left;
+    line-height: 50px;
+    padding-top: 100px;
+    color: black;
+}
+.navoverlay{
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    margin-left: 1180px;
+}
+.midlinks{
+    height: 400px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    line-height: 50px;
+    padding-top: 290px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    font-size: large;
+    
+
+}
+.results{
+    background-image: url("images\results.jpg");
+}
