@@ -111,29 +111,81 @@ integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmV
     $image = ($_FILES['image']['name']);
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) { 
       echo "The file ". basename( $_FILES['uploadedfile']['name']). " has been uploaded, and your information has been added to the directory"; 
-  } else { 
+    } else { 
       echo "Sorry, there was a problem uploading your file.";
-  } 
+    } 
     
-        $query    = "INSERT into `candidates` (fname, sname,school_id, email, position, image, create_datetime)
+    $query    = "INSERT into `candidates` (fname, sname,school_id, email, position, image, create_datetime)
                      VALUES ('$fname', '$sname','$school_id', '$email', '$position','$target', '$create_datetime')";
-        $result   = mysqli_query($conn, $query);
-        if ($result) {
+    $result   = mysqli_query($conn, $query);
+    if ($result) {
             // echo "<div class='form'>
             //       <h3>Admin registered successfully.</h3><br/>
             //       </div>";
-            header('Location: Register_candidates.php');
-        } else {
+            if($position === "president"){
+              $query    = "INSERT into `president` (fname, sname, image)
+              VALUES ('$fname', '$sname', '$target')";
+              $result1   = mysqli_query($conn, $query);
+              if($result1){
+                header('Location: Register_candidates.php');
+
+              }
+            }
+             else if($position === "vice_president"){
+              $query    = "INSERT into `vice_president` (fname, sname, image)
+              VALUES ('$fname', '$sname', '$target')";
+              $result1   = mysqli_query($conn, $query);
+              if($result1){
+                header('Location: Register_candidates.php');
+
+              }
+            }
+            if($position === "finance_rep"){
+              $query    = "INSERT into `finance_rep` (fname, sname, image)
+              VALUES ('$fname', '$sname', '$target')";
+              $result1   = mysqli_query($conn, $query);
+              if($result1){
+                header('Location: Register_candidates.php');
+
+              }
+            }
+            if($position === "academic_rep"){
+              $query    = "INSERT into `academic_rep` (fname, sname, image)
+              VALUES ('$fname', '$sname', '$target')";
+              $result1   = mysqli_query($conn, $query);
+              if($result1){
+                header('Location: Register_candidates.php');
+
+              }
+            }
+            if($position === "relations"){
+              $query    = "INSERT into `public_relations` (fname, sname, image)
+              VALUES ('$fname', '$sname', '$target')";
+              $result1   = mysqli_query($conn, $query);
+              if($result1){
+                header('Location: Register_candidates.php');
+
+              }
+            }
+            if($position === "sports_rep"){
+              $query    = "INSERT into `sports_rep` (fname, sname, image)
+              VALUES ('$fname', '$sname', '$target')";
+              $result1   = mysqli_query($conn, $query);
+              if($result1){
+                header('Location: Register_candidates.php');
+
+              }
+            }
+
+        }
+         else {
             echo "<div class='form'>
                   <h3>Required fields are missing.</h3><br/>
                   <p class='link'>Try  again.</p>
                   </div>";
         }
       
-    } 
-  
-  
-  else {
+    }  else {
 ?>
 <!-- html -->
 
